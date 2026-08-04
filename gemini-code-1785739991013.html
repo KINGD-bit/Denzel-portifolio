@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denzel Mgoni | Digital Marketing Strategist & Brand Designer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0B1F3A',
+                        charcoal: '#111827',
+                        gold: '#D4AF37',
+                        'gold-light': '#F3E5AB',
+                        'gold-dark': '#AA820A',
+                        'soft-white': '#F5F7FA'
+                    },
+                    fontFamily: {
+                        grotesk: ['Space Grotesk', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles & Glassmorphism */
+        body {
+            background-color: #0A0F1D;
+            color: #F5F7FA;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(17, 24, 39, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 12px 40px 0 rgba(212, 175, 55, 0.1);
+        }
+
+        .glass-nav {
+            background: rgba(11, 31, 58, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #997A15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-button {
+            background: linear-gradient(135deg, #D4AF37 0%, #B8901C 100%);
+            color: #0B1F3A;
+            transition: all 0.3s ease;
+        }
+
+        .gold-button:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Abstract Grid & Glow Backgrounds */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        .glow-orb-1 {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(11, 31, 58, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .glow-orb-2 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(11, 31, 58, 0.6) 0%, rgba(10, 15, 29, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Scroll Progress Bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D4AF37, #FFF099);
+            z-index: 100;
+            width: 0%;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0F1D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F293D;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-grid-pattern relative">
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Mouse Glow Effect Container -->
+    <div id="cursor-glow" class="fixed w-96 h-96 rounded-full pointer-events-none z-0 transition-transform duration-300 ease-out opacity-20" style="background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);"></div>
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="font-grotesk text-2xl font-bold tracking-wider text-white">
+                DENZEL <span class="gold-gradient-text">MGONI</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-gold transition">Home</a>
+                <a href="#about" class="hover:text-gold transition">About</a>
+                <a href="#services" class="hover:text-gold transition">Services</a>
+                <a href="#skills" class="hover:text-gold transition">Skills</a>
+                <a href="#portfolio" class="hover:text-gold transition">Portfolio</a>
+                <a href="#certifications" class="hover:text-gold transition">Certifications</a>
+                <a href="#experience" class="hover:text-gold transition">Experience</a>
+                <a href="#contact" class="hover:text-gold transition">Contact</a>
+            </nav>
+
+            <a href="#contact" class="hidden sm:inline-block px-5 py-2.5 rounded-full gold-button font-semibold text-xs uppercase tracking-wider">
+                Let's Talk
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-2xl p-6 flex-col space-y-4 text-center">
+            <a href="#home" class="hover:text-gold transition py-2 border-b border-gray-800">Home</a>
+            <a href="#about" class="hover:text-gold transition py-2 border-b border-gray-800">About</a>
+            <a href="#services" class="hover:text-gold transition py-2 border-b border-gray-800">Services</a>
+            <a href="#skills" class="hover:text-gold transition py-2 border-b border-gray-800">Skills</a>
+            <a href="#portfolio" class="hover:text-gold transition py-2 border-b border-gray-800">Portfolio</a>
+            <a href="#certifications" class="hover:text-gold transition py-2 border-b border-gray-800">Certifications</a>
+            <a href="#experience" class="hover:text-gold transition py-2 border-b border-gray-800">Experience</a>
+            <a href="#contact" class="hover:text-gold transition py-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+        <div class="glow-orb-1 top-20 -left-20"></div>
+        <div class="glow-orb-2 bottom-10 -right-20"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Left Info Column -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card text-gold text-xs font-semibold uppercase tracking-widest">
+                    <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                    <span>Available for Strategic Partnerships</span>
+                </div>
+
+                <h1 class="font-grotesk text-4xl sm:text-6xl font-extrabold leading-tight text-white">
+                    Denzel <span class="gold-gradient-text">Mgoni</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl font-medium text-gold/90 font-grotesk">
+                    Digital Marketing Strategist | SEO Specialist | Brand Designer | Creative Growth Professional
+                </p>
+
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-200 leading-snug">
+                    Helping Brands Grow Through Strategy, Creativity & Data-Driven Digital Marketing.
+                </h2>
+
+                <p class="text-gray-400 italic max-w-2xl text-base sm:text-lg border-l-2 border-gold/40 pl-4 py-1 mx-auto lg:mx-0">
+                    "I help businesses build powerful brands, increase their online visibility, and generate measurable growth through strategic digital marketing, SEO, branding, content creation, and performance marketing."
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#portfolio" class="px-7 py-3.5 rounded-full gold-button font-bold text-sm uppercase tracking-wider flex items-center space-x-2">
+                        <span>View Portfolio</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#contact" class="px-7 py-3.5 rounded-full glass-card hover:bg-white/10 font-bold text-sm uppercase tracking-wider text-white border border-gold/30 transition">
+                        Contact Me
+                    </a>
+                    <a href="mailto:mgonidenzel2007@gmail.com" class="px-6 py-3.5 rounded-full glass-card hover:bg-white/10 font-bold text-sm text-gray-300 transition flex items-center space-x-2">
+                        <i class="fa-solid fa-download text-gold"></i>
+                        <span>Download CV</span>
+                    </a>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="pt-6 flex items-center justify-center lg:justify-start space-x-5 text-gray-400">
+                    <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:text-gold hover:border-gold transition">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:text-gold hover:border-gold transition">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:text-gold hover:border-gold transition">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:text-gold hover:border-gold transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://behance.net" target="_blank" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:text-gold hover:border-gold transition">
+                        <i class="fa-brands fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Image Column (Headshot Placeholder with Dashboard Floating Elements) -->
+            <div class="lg:col-span-5 flex justify-center relative">
+                <!-- Background Floating Stat Cards -->
+                <div class="absolute -top-6 -left-6 glass-card p-4 rounded-xl z-20 hidden sm:flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center text-gold">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">SEO Traffic Increase</p>
+                        <p class="text-sm font-bold text-white">+245% YoY</p>
+                    </div>
+                </div>
+
+                <div class="absolute -bottom-6 -right-6 glass-card p-4 rounded-xl z-20 hidden sm:flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">Conversion Rate</p>
+                        <p class="text-sm font-bold text-white">4.8% Optimized</p>
+                    </div>
+                </div>
+
+                <!-- Main Photo Frame -->
+                <div class="w-72 h-80 sm:w-80 sm:h-96 rounded-3xl p-2 glass-card relative overflow-hidden group">
+                    <div class="w-full h-full rounded-2xl bg-gradient-to-br from-navy via-charcoal to-black flex flex-col items-center justify-center text-center p-6 border border-gold/20 relative overflow-hidden">
+                        <!-- Abstract Dashboard Graphics inside frame -->
+                        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                        
+                        <div class="w-24 h-24 rounded-full bg-gold/10 border-2 border-gold/40 flex items-center justify-center text-gold text-4xl mb-4 group-hover:scale-110 transition duration-500">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white font-grotesk">Denzel Mgoni</h3>
+                        <p class="text-xs text-gold uppercase tracking-widest mt-1">Professional Photo Placeholder</p>
+                        <p class="text-xs text-gray-400 mt-3 max-w-xs">Upload high-resolution headshot here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 relative bg-charcoal/40 border-y border-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-gold text-xs font-extrabold uppercase tracking-widest">My Philosophy</span>
+                <h2 class="font-grotesk text-3xl sm:text-5xl font-bold text-white">Behind The Strategy</h2>
+                <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6 text-gray-300 text-base leading-relaxed">
+                    <p class="text-lg font-medium text-white">
+                        Digital growth isn’t born out of guesswork—it is crafted through deliberate strategy, creative storytelling, and unrelenting optimization.
+                    </p>
+                    <p>
+                        I am Denzel Mgoni, a passionate Digital Marketing Strategist, SEO Specialist, and Brand Designer dedicated to turning ambitious brands into market leaders. My approach bridges the gap between analytical rigor and visual craftsmanship.
+                    </p>
+                    <p>
+                        Whether dissecting complex technical SEO architectures, structuring high-ROI paid ad funnels across Google and Meta, or designing memorable brand identity systems, my mission is always singular: delivering measurable commercial impact.
+                    </p>
+                    <p>
+                        I thrive in dynamic environments where rapid market shifts demand continuous learning, iterative testing, and creative innovation.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl glass-card border-l-4 border-gold">
+                            <h4 class="font-grotesk text-2xl font-bold text-white">100%</h4>
+                            <p class="text-xs text-gray-400 uppercase mt-1">Data-Backed Solutions</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass-card border-l-4 border-gold">
+                            <h4 class="font-grotesk text-2xl font-bold text-white">360°</h4>
+                            <p class="text-xs text-gray-400 uppercase mt-1">Brand & Search Synergy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <div class="glass-card p-6 rounded-2xl space-y-3">
+                        <i class="fa-solid fa-lightbulb text-gold text-3xl"></i>
+                        <h3 class="text-lg font-bold text-white font-grotesk">Creative Direction</h3>
+                        <p class="text-xs text-gray-400">Crafting compelling brand visuals and narratives that resonate deep within target audiences.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl space-y-3 mt-6">
+                        <i class="fa-solid fa-magnifying-glass-chart text-gold text-3xl"></i>
+                        <h3 class="text-lg font-bold text-white font-grotesk">SEO & AEO Dominance</h3>
+                        <p class="text-xs text-gray-400">Structuring websites for traditional search visibility and modern Answer Engine AI discovery.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl space-y-3">
+                        <i class="fa-solid fa-chart-pie text-gold text-3xl"></i>
+                        <h3 class="text-lg font-bold text-white font-grotesk">Performance Analytics</h3>
+                        <p class="text-xs text-gray-400">Converting complex marketing analytics into actionable business growth strategies.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl space-y-3 mt-6">
+                        <i class="fa-solid fa-rocket text-gold text-3xl"></i>
+                        <h3 class="text-lg font-bold text-white font-grotesk">CRO & Funnels</h3>
+                        <p class="text-xs text-gray-400">Optimizing user journeys to maximize conversions and reduce customer acquisition costs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-gold text-xs font-extrabold uppercase tracking-widest">Capabilities</span>
+                <h2 class="font-grotesk text-3xl sm:text-5xl font-bold text-white">Full-Spectrum Growth Services</h2>
+                <p class="text-gray-400 text-sm sm:text-base">End-to-end digital marketing, search optimization, and branding solutions customized for modern business scaling.</p>
+                <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Items -->
+                <script>
+                    const servicesList = [
+                        { icon: 'fa-bullseye', title: 'Digital Marketing Strategy', desc: 'Holistic growth frameworks tailored to your business goals and market dynamics.' },
+                        { icon: 'fa-magnifying-glass', title: 'Search Engine Optimization (SEO)', desc: 'Organic growth strategies to conquer page-one rankings across search engines.' },
+                        { icon: 'fa-robot', title: 'Answer Engine Optimization (AEO)', desc: 'Optimizing brand knowledge graphs for AI assistants and conversational search.' },
+                        { icon: 'fa-share-nodes', title: 'Social Media Marketing', desc: 'Engaging content campaigns and community development across key platforms.' },
+                        { icon: 'fa-rectangle-ad', title: 'Google & Meta Ads', desc: 'Targeted paid advertising strategies designed for optimal ROI and conversion.' },
+                        { icon: 'fa-envelope-open-text', title: 'Email Marketing', desc: 'Automated conversion funnels and customer retention email sequences.' },
+                        { icon: 'fa-pen-nib', title: 'Content Marketing & Planning', desc: 'Strategic content creation designed to build authority, trust, and organic lead flow.' },
+                        { icon: 'fa-compass-drafting', title: 'Brand Strategy & Identity', desc: 'Distinct visual identity systems, logos, and market positioning guides.' },
+                        { icon: 'fa-palette', title: 'Graphic & Canva Pro Design', desc: 'High-converting ad creative, templates, visual assets, and marketing collateral.' },
+                        { icon: 'fa-laptop-code', title: 'Technical & Local SEO Audits', desc: 'In-depth architecture analysis, speed optimizations, and regional visibility.' },
+                        { icon: 'fa-chart-line', title: 'Conversion Rate Optimization (CRO)', desc: 'Data-driven landing page enhancements to increase audience action rates.' },
+                        { icon: 'fa-chart-simple', title: 'Marketing Analytics & Dashboards', desc: 'Setting up Google Analytics, Search Console, and performance metrics tracking.' }
+                    ];
+
+                    document.write(servicesList.map(s => `
+                        <div class="glass-card p-6 rounded-2xl group hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl group-hover:bg-gold group-hover:text-navy transition duration-300">
+                                    <i class="fa-solid ${s.icon}"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-white font-grotesk">${s.title}</h3>
+                                <p class="text-xs text-gray-400 leading-relaxed">${s.desc}</p>
+                            </div>
+                            <div class="pt-4 mt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gold">
+                                <span class="font-semibold uppercase tracking-wider">Learn More</span>
+                                <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition"></i>
+                            </div>
+                        </div>
+                    `).join(''));
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 relative bg-charcoal/40 border-y border-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-gold text-xs font-extrabold uppercase tracking-widest">Competencies</span>
+                <h2 class="font-grotesk text-3xl sm:text-5xl font-bold text-white">Skills & Toolkit</h2>
+                <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Marketing Skills -->
+                <div class="glass-card p-8 rounded-2xl space-y-6">
+                    <div class="flex items-center space-x-3 text-gold">
+                        <i class="fa-solid fa-chart-column text-2xl"></i>
+                        <h3 class="font-grotesk text-xl font-bold text-white">Marketing Mastery</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-300">SEO & Technical Optimization</span>
+                                <span class="text-gold">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gold h-full rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-300">Digital Marketing Strategy</span>
+                                <span class="text-gold">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gold h-full rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-300">Paid Media (Google & Meta Ads)</span>
+                                <span class="text-gold">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gold h-full rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-300">Analytics & Conversion Optimization</span>
+                                <span class="text-gold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gold h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design Skills -->
+                <div class="glass-card p-8 rounded-2xl space-y-6">
+                    <div class="flex items-center space-x-3 text-gold">
+                        <i class="fa-solid fa-paintbrush text-2xl"></i>
+                        <h3 class="font-grotesk text-xl font-bold text-white">Design & Visual</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-300">Brand Identity & Logo Design</span>
+                                <span class="text-gold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gold h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-300">Canva Pro Mastery</span>
+                                <span class="text-gold">98%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gold h-full rounded-full" style="width: 98%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-300">Social Media & Ad Creative Design</span>
+                                <span class="text-gold">94%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gold h-full rounded-full" style="width: 94%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-300">UI/UX Layout Principles</span>
+                                <span class="text-gold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gold h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical & Tools -->
+                <div class="glass-card p-8 rounded-2xl space-y-6">
+                    <div class="flex items-center space-x-3 text-gold">
+                        <i class="fa-solid fa-code text-2xl"></i>
+                        <h3 class="font-grotesk text-xl font-bold text-white">Technical & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-navy text-xs font-semibold text-gray-200 border border-gold/20">Google Analytics (GA4)</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy text-xs font-semibold text-gray-200 border border-gold/20">Google Search Console</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy text-xs font-semibold text-gray-200 border border-gold/20">Meta Business Suite</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy text-xs font-semibold text-gray-200 border border-gold/20">Canva Pro</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy text-xs font-semibold text-gray-200 border border-gold/20">Figma</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy text-xs font-semibold text-gray-200 border border-gold/20">HTML5 & CSS3</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy text-xs font-semibold text-gray-200 border border-gold/20">Basic JavaScript</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy text-xs font-semibold text-gray-200 border border-gold/20">WordPress</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy text-xs font-semibold text-gray-200 border border-gold/20">Mailchimp</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy text-xs font-semibold text-gray-200 border border-gold/20">VS Code</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy text-xs font-semibold text-gray-200 border border-gold/20">ChatGPT AI Workflows</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-gold text-xs font-extrabold uppercase tracking-widest">Case Studies & Work</span>
+                <h2 class="font-grotesk text-3xl sm:text-5xl font-bold text-white">Featured Projects</h2>
+                <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-12" id="portfolio-filters">
+                <button class="filter-btn active px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider glass-card text-gold border-gold" data-filter="all">All Projects</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider glass-card text-gray-400 hover:text-white" data-filter="marketing">Digital Marketing</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider glass-card text-gray-400 hover:text-white" data-filter="seo">SEO Audits</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider glass-card text-gray-400 hover:text-white" data-filter="branding">Branding</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="portfolio-grid">
+                <!-- Project 1: Planova -->
+                <div class="portfolio-item marketing branding glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-64 bg-gradient-to-tr from-navy via-charcoal to-black relative flex items-center justify-center p-8 overflow-hidden">
+                        <div class="absolute inset-0 bg-gold/5 group-hover:bg-gold/10 transition duration-500"></div>
+                        <i class="fa-solid fa-house-laptop text-6xl text-gold/40 group-hover:scale-110 transition duration-500"></i>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-navy/80 text-gold text-xs font-bold border border-gold/20">Featured Brand</span>
+                    </div>
+                    <div class="p-8 space-y-4">
+                        <span class="text-xs text-gold uppercase font-semibold">Branding • Paid Search • Web Strategy</span>
+                        <h3 class="text-2xl font-bold text-white font-grotesk">Planova Smart House Plans</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Full marketing strategy, brand identity overhaul, Google Ads campaign architecture, social media content, and digital lead funnel for a modern residential architecture brand in Zimbabwe.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">Google Ads</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">Brand Identity</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">Content Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: SEO Audit Case Study -->
+                <div class="portfolio-item seo glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-64 bg-gradient-to-tr from-navy via-charcoal to-black relative flex items-center justify-center p-8 overflow-hidden">
+                        <i class="fa-solid fa-chart-line text-6xl text-gold/40 group-hover:scale-110 transition duration-500"></i>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-navy/80 text-gold text-xs font-bold border border-gold/20">SEO Audit</span>
+                    </div>
+                    <div class="p-8 space-y-4">
+                        <span class="text-xs text-gold uppercase font-semibold">Technical SEO • Core Web Vitals</span>
+                        <h3 class="text-2xl font-bold text-white font-grotesk">Enterprise Technical SEO Audit</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Comprehensive website audit highlighting indexability bottlenecks, page speed improvements, mobile responsiveness fixes, and strategic keyword clustering recommendations.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">Core Web Vitals</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">On-Page SEO</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">Schema Markup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Visual Identity System -->
+                <div class="portfolio-item branding glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-64 bg-gradient-to-tr from-navy via-charcoal to-black relative flex items-center justify-center p-8 overflow-hidden">
+                        <i class="fa-solid fa-wand-magic-sparkles text-6xl text-gold/40 group-hover:scale-110 transition duration-500"></i>
+                    </div>
+                    <div class="p-8 space-y-4">
+                        <span class="text-xs text-gold uppercase font-semibold">Brand Design • Social Assets</span>
+                        <h3 class="text-2xl font-bold text-white font-grotesk">E-Commerce Visual Rebrand</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Developed a cohesive digital brand guidelines package, promotional social media templates, ad creative variations, and luxury product packaging mockups.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">Canva Pro</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">Ad Creative</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">Figma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Growth Marketing Campaign -->
+                <div class="portfolio-item marketing glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-64 bg-gradient-to-tr from-navy via-charcoal to-black relative flex items-center justify-center p-8 overflow-hidden">
+                        <i class="fa-solid fa-bullseye text-6xl text-gold/40 group-hover:scale-110 transition duration-500"></i>
+                    </div>
+                    <div class="p-8 space-y-4">
+                        <span class="text-xs text-gold uppercase font-semibold">Paid Ads • Funnel Optimization</span>
+                        <h3 class="text-2xl font-bold text-white font-grotesk">Omnichannel Growth Campaign</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Planned and executed integrated Meta & Google Ads campaigns resulting in lower Cost-Per-Acquisition (CPA) and increased qualified lead generation.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">Meta Ads</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">CRO</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-navy text-gray-300">Google Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-24 relative bg-charcoal/40 border-y border-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-gold text-xs font-extrabold uppercase tracking-widest">Credentials</span>
+                <h2 class="font-grotesk text-3xl sm:text-5xl font-bold text-white">Certifications & Credentials</h2>
+                <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-gold/10 text-gold flex items-center justify-center text-2xl mx-auto border border-gold/30">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white font-grotesk">Google Digital Garage</h3>
+                    <p class="text-xs text-gold">Fundamentals of Digital Marketing</p>
+                    <p class="text-xs text-gray-400">Mastery of search engines, digital advertising strategy, analytics, and business growth online.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-gold/10 text-gold flex items-center justify-center text-2xl mx-auto border border-gold/30">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white font-grotesk">Coursera</h3>
+                    <p class="text-xs text-gold">Advanced SEO & Growth Specializations</p>
+                    <p class="text-xs text-gray-400">In-depth training in keyword research, technical SEO, and data-backed marketing optimization.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-gold/10 text-gold flex items-center justify-center text-2xl mx-auto border border-gold/30">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white font-grotesk">HP LIFE</h3>
+                    <p class="text-xs text-gold">Business & Digital Skills</p>
+                    <p class="text-xs text-gray-400">Practical business communications, strategic planning, and modern digital workflow execution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Journey -->
+    <section id="experience" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-gold text-xs font-extrabold uppercase tracking-widest">Growth Journey</span>
+                <h2 class="font-grotesk text-3xl sm:text-5xl font-bold text-white">Experience & Career Evolution</h2>
+                <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-8 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:w-0.5 before:bg-gold/20">
+                <!-- Timeline Item 1 -->
+                <div class="relative flex flex-col sm:flex-row items-center justify-between group">
+                    <div class="w-full sm:w-5/12 sm:text-right pr-0 sm:pr-8 space-y-2 mb-4 sm:mb-0">
+                        <span class="text-xs text-gold font-bold">Present</span>
+                        <h3 class="text-xl font-bold text-white font-grotesk">Digital Marketing Strategist & Brand Consultant</h3>
+                        <p class="text-xs text-gray-400">Leading end-to-end digital growth campaigns, branding architecture, and SEO strategies for client portfolios.</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-gold text-navy flex items-center justify-center font-bold z-10 my-2 sm:my-0">
+                        <i class="fa-solid fa-briefcase text-xs"></i>
+                    </div>
+                    <div class="w-full sm:w-5/12 pl-0 sm:pl-8"></div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative flex flex-col sm:flex-row items-center justify-between group">
+                    <div class="w-full sm:w-5/12"></div>
+                    <div class="w-8 h-8 rounded-full bg-gold text-navy flex items-center justify-center font-bold z-10 my-2 sm:my-0">
+                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                    </div>
+                    <div class="w-full sm:w-5/12 pl-0 sm:pl-8 space-y-2">
+                        <span class="text-xs text-gold font-bold">SEO & Brand Specialist</span>
+                        <h3 class="text-xl font-bold text-white font-grotesk">Digital Growth & Search Audits</h3>
+                        <p class="text-xs text-gray-400">Executing technical website audits, keyword strategies, content planning, and brand collateral creation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Me Section -->
+    <section class="py-24 relative bg-charcoal/40 border-y border-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-gold text-xs font-extrabold uppercase tracking-widest">The Advantage</span>
+                <h2 class="font-grotesk text-3xl sm:text-5xl font-bold text-white">Why Work With Me</h2>
+                <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <i class="fa-solid fa-brain text-gold text-2xl"></i>
+                    <h3 class="text-lg font-bold text-white font-grotesk">Strategic Thinking</h3>
+                    <p class="text-xs text-gray-400">Every campaign starts with clear objective setting, competitor intelligence, and market positioning.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <i class="fa-solid fa-chart-line text-gold text-2xl"></i>
+                    <h3 class="text-lg font-bold text-white font-grotesk">Data-Driven Execution</h3>
+                    <p class="text-xs text-gray-400">Decisions are guided by analytics metrics, conversion signals, and rigorous testing frameworks.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <i class="fa-solid fa-gem text-gold text-2xl"></i>
+                    <h3 class="text-lg font-bold text-white font-grotesk">Branding Excellence</h3>
+                    <p class="text-xs text-gray-400">Creating sleek visual identity systems that build long-term enterprise trust and differentiation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-gold text-xs font-extrabold uppercase tracking-widest">Endorsements</span>
+                <h2 class="font-grotesk text-3xl sm:text-5xl font-bold text-white">Client Feedback</h2>
+                <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="glass-card p-8 rounded-2xl space-y-4 relative">
+                    <i class="fa-solid fa-quote-left text-gold/30 text-4xl absolute top-6 right-6"></i>
+                    <p class="text-xs text-gray-300 italic leading-relaxed">
+                        "Denzel completely transformed our digital strategy. His SEO audit and brand positioning for Planova gave us absolute clarity and resulted in a noticeable increase in qualified leads."
+                    </p>
+                    <div class="pt-4 border-t border-gray-800">
+                        <h4 class="font-bold text-white text-sm font-grotesk">Brand Executive</h4>
+                        <p class="text-xs text-gold">Planova Smart House Plans</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl space-y-4 relative">
+                    <i class="fa-solid fa-quote-left text-gold/30 text-4xl absolute top-6 right-6"></i>
+                    <p class="text-xs text-gray-300 italic leading-relaxed">
+                        "Working with Denzel was effortless. He brings both creative visual talent and deep analytical understanding to digital marketing and paid advertising."
+                    </p>
+                    <div class="pt-4 border-t border-gray-800">
+                        <h4 class="font-bold text-white text-sm font-grotesk">Business Partner</h4>
+                        <p class="text-xs text-gold">Digital Campaign Collaborator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative bg-charcoal/40 border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-gold text-xs font-extrabold uppercase tracking-widest">Get In Touch</span>
+                <h2 class="font-grotesk text-3xl sm:text-5xl font-bold text-white">Let’s Build Something Iconic</h2>
+                <p class="text-gray-400 text-sm">Have a brand to launch, an SEO strategy to optimize, or a marketing campaign to run? Let's connect.</p>
+                <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-card p-6 rounded-2xl space-y-4">
+                        <h3 class="text-xl font-bold text-white font-grotesk mb-4">Direct Details</h3>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-gold/10 text-gold flex items-center justify-center">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Name</p>
+                                <p class="text-sm font-semibold text-white">Denzel Mgoni</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-gold/10 text-gold flex items-center justify-center">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Email</p>
+                                <a href="mailto:mgonidenzel2007@gmail.com" class="text-sm font-semibold text-gold hover:underline">mgonidenzel2007@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-gold/10 text-gold flex items-center justify-center">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Phone / WhatsApp</p>
+                                <a href="tel:+263778669888" class="text-sm font-semibold text-white hover:text-gold">+263 778 669 888</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Action Buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://wa.me/263778669888" target="_blank" class="flex-1 px-4 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 transition">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="mailto:mgonidenzel2007@gmail.com" class="flex-1 px-4 py-3 rounded-xl gold-button font-bold text-xs uppercase tracking-wider flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Send Email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7">
+                    <form class="glass-card p-8 rounded-2xl space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Your Name</label>
+                                <input type="text" placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-navy/60 border border-gold/20 text-white placeholder-gray-500 focus:outline-none focus:border-gold text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Your Email</label>
+                                <input type="email" placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-navy/60 border border-gold/20 text-white placeholder-gray-500 focus:outline-none focus:border-gold text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Subject</label>
+                            <input type="text" placeholder="Digital Marketing Strategy Inquiry" class="w-full px-4 py-3 rounded-xl bg-navy/60 border border-gold/20 text-white placeholder-gray-500 focus:outline-none focus:border-gold text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Message</label>
+                            <textarea rows="4" placeholder="Tell me about your brand goals..." class="w-full px-4 py-3 rounded-xl bg-navy/60 border border-gold/20 text-white placeholder-gray-500 focus:outline-none focus:border-gold text-sm"></textarea>
+                        </div>
+
+                        <button type="button" class="w-full py-4 rounded-xl gold-button font-bold text-xs uppercase tracking-widest">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-charcoal border-t border-gray-800 text-center text-xs text-gray-400 space-y-4">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="font-grotesk text-sm font-bold text-white">
+                Denzel <span class="gold-gradient-text">Mgoni</span>
+            </p>
+            <p class="italic">"Helping brands grow through strategy, creativity, and measurable digital success."</p>
+            <p>© 2026 Denzel Mgoni. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
+
+        // Mouse Follow Glow Effect
+        const cursorGlow = document.getElementById('cursor-glow');
+        window.addEventListener('mousemove', (e) => {
+            cursorGlow.style.transform = `translate(${e.clientX - 192}px, ${e.clientY - 192}px)`;
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Portfolio Category Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('text-gold', 'border-gold');
+                    b.classList.add('text-gray-400');
+                });
+                btn.classList.add('text-gold', 'border-gold');
+                btn.classList.remove('text-gray-400');
+
+                const filter = btn.getAttribute('data-filter');
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
