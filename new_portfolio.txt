@@ -1,0 +1,185 @@
+<section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-subtitle">Case Studies & Work</span>
+                    <h2>Featured <span class="text-gradient">Projects</span></h2>
+                </div>
+                
+                <div class="portfolio-filters reveal-up">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="featured">Featured</button>
+                    <button class="filter-btn" data-filter="marketing">Digital Marketing</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="flyers">Flyers</button>
+                    <button class="filter-btn" data-filter="development">Development</button>
+                </div>
+
+                <div class="portfolio-grid">
+                    <!-- Project 1: PLANOVA (Featured, Marketing) -->
+                    <div class="portfolio-card glass-card reveal-up" data-category="featured marketing">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" alt="PLANOVA Dashboard Mockup">
+                            <span class="card-badge">Marketing</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>PLANOVA</h3>
+                            <p>A comprehensive digital marketing and SEO overhaul for a B2B SaaS platform.</p>
+                            <div class="card-meta">
+                                <span><i data-lucide="user"></i> SEO Strategy, Web Design</span>
+                                <span><i data-lucide="tool"></i> SEMrush, Google Analytics</span>
+                            </div>
+                            <button class="btn btn-outline view-case-study">View Case Study</button>
+                        </div>
+                        <div class="hidden-case-study-data" style="display:none;">
+                            <div class="cs-overview">A comprehensive digital marketing and SEO overhaul for a B2B SaaS platform aimed at scaling enterprise lead generation.</div>
+                            <div class="cs-challenge">Low organic traffic, high bounce rate, and poor conversion rates from paid campaigns.</div>
+                            <div class="cs-solution">Executed a complete Technical SEO audit, rebuilt the content strategy around long-tail SaaS keywords, and redesigned the core landing pages for better UX.</div>
+                            <div class="cs-results">Results / Outcomes: +150% organic traffic in 6 months, 35% increase in demo signups, 40% reduction in CPC.</div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: KINGMAX (Featured, Design, Marketing) -->
+                    <div class="portfolio-card glass-card reveal-up" data-category="featured design marketing">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" alt="KINGMAX Campaign Mockup">
+                            <span class="card-badge">Design & Marketing</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>KINGMAX</h3>
+                            <p>Brand identity and Google Ads campaign for a premium lifestyle brand.</p>
+                            <div class="card-meta">
+                                <span><i data-lucide="user"></i> Brand Strategist, PPC</span>
+                                <span><i data-lucide="tool"></i> Google Ads, Illustrator</span>
+                            </div>
+                            <button class="btn btn-outline view-case-study">View Case Study</button>
+                        </div>
+                        <div class="hidden-case-study-data" style="display:none;">
+                            <div class="cs-overview">Brand identity and Google Ads campaign designed to launch a new premium lifestyle brand into a highly competitive market.</div>
+                            <div class="cs-challenge">High CPA (Cost Per Acquisition) and an inconsistent brand messaging across social channels.</div>
+                            <div class="cs-solution">Led a full rebranding initiative, designed cohesive visual assets, and launched highly targeted search and display ad copy.</div>
+                            <div class="cs-results">Results / Outcomes: 40% reduction in CPA, 2x Return on Ad Spend (ROAS) within the first quarter.</div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: PRIMESTAY (Featured, Design) -->
+                    <div class="portfolio-card glass-card reveal-up" data-category="featured design">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=1200" alt="PRIMESTAY Design Mockup">
+                            <span class="card-badge">Web Design</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>PRIMESTAY</h3>
+                            <p>Website design and social media marketing for a luxury real estate agency.</p>
+                            <div class="card-meta">
+                                <span><i data-lucide="user"></i> Web Designer, Social Media</span>
+                                <span><i data-lucide="tool"></i> Figma, Meta Ads</span>
+                            </div>
+                            <button class="btn btn-outline view-case-study">View Case Study</button>
+                        </div>
+                        <div class="hidden-case-study-data" style="display:none;">
+                            <div class="cs-overview">Website design and social media marketing strategy to elevate the digital presence of a luxury real estate agency.</div>
+                            <div class="cs-challenge">An outdated web presence that was failing to attract high-net-worth clients and a stagnant social media following.</div>
+                            <div class="cs-solution">Designed a modern, luxurious, mobile-first website and implemented a targeted Meta Ads strategy focusing on exclusive property listings.</div>
+                            <div class="cs-results">Results / Outcomes: Generated 500+ high-quality leads in 3 months and increased social engagement by 300%.</div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder: Development -->
+                    <div class="portfolio-card glass-card reveal-up" data-category="development">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200" alt="Development Project">
+                            <span class="card-badge">Development</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>E-Commerce Platform</h3>
+                            <p>A fast, responsive web interface for a modern retail brand.</p>
+                            <div class="card-meta">
+                                <span><i data-lucide="user"></i> Frontend Developer</span>
+                                <span><i data-lucide="tool"></i> HTML, CSS, JavaScript</span>
+                            </div>
+                            <button class="btn btn-outline view-case-study">View Case Study</button>
+                        </div>
+                        <div class="hidden-case-study-data" style="display:none;">
+                            <div class="cs-overview">A fast, responsive web interface for a modern retail brand requiring seamless user navigation.</div>
+                            <div class="cs-challenge">Slow load times and non-responsive mobile views were causing high cart abandonment rates.</div>
+                            <div class="cs-solution">Rewrote the frontend architecture using modern HTML/CSS/JS, optimizing images and implementing a mobile-first grid.</div>
+                            <div class="cs-results">Results / Outcomes: [Placeholder for actual client results, e.g., improved load times by X seconds].</div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder: Flyers -->
+                    <div class="portfolio-card glass-card reveal-up" data-category="flyers">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200" alt="Flyer Design">
+                            <span class="card-badge">Flyer Design</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Event Promo Series</h3>
+                            <p>High-impact promotional flyer designs for a summer festival.</p>
+                            <div class="card-meta">
+                                <span><i data-lucide="user"></i> Creative Designer</span>
+                                <span><i data-lucide="tool"></i> Photoshop, Canva</span>
+                            </div>
+                            <button class="btn btn-outline view-case-study">View Case Study</button>
+                        </div>
+                        <div class="hidden-case-study-data" style="display:none;">
+                            <div class="cs-overview">A series of high-impact promotional flyer designs intended for both print and digital distribution.</div>
+                            <div class="cs-challenge">Needed to capture the vibrant, energetic feel of a summer festival while keeping critical event details legible.</div>
+                            <div class="cs-solution">Developed a dynamic visual language using bold typography, contrasting gradients, and custom photo manipulation.</div>
+                            <div class="cs-results">Results / Outcomes: [Placeholder for actual results, e.g., tickets sold, event attendance].</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study Modal (Hidden by default) -->
+        <div id="case-study-modal" class="modal-overlay">
+            <div class="modal-content glass-card">
+                <button class="modal-close" aria-label="Close Modal"><i data-lucide="x"></i></button>
+                <div class="modal-scroll-area">
+                    <div class="modal-header">
+                        <span class="modal-category text-gradient">Category</span>
+                        <h2 class="modal-title">Project Title</h2>
+                    </div>
+                    <div class="modal-image-wrapper">
+                        <img class="modal-image" src="" alt="Project Image">
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-section">
+                            <h3>Overview</h3>
+                            <p class="modal-overview">Overview text...</p>
+                        </div>
+                        <div class="modal-grid-2">
+                            <div class="modal-section">
+                                <h3>The Challenge</h3>
+                                <p class="modal-challenge">Challenge text...</p>
+                            </div>
+                            <div class="modal-section">
+                                <h3>The Strategy / Solution</h3>
+                                <p class="modal-solution">Solution text...</p>
+                            </div>
+                        </div>
+                        <div class="modal-grid-2">
+                            <div class="modal-section">
+                                <h3>My Role</h3>
+                                <p class="modal-role">Role...</p>
+                            </div>
+                            <div class="modal-section">
+                                <h3>Tools Used</h3>
+                                <p class="modal-tools">Tools...</p>
+                            </div>
+                        </div>
+                        <div class="modal-section modal-highlight-box">
+                            <h3>Results & Outcomes</h3>
+                            <p class="modal-results">Results...</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary modal-close-btn">Back to Projects</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        

@@ -1,0 +1,62 @@
+:root {
+    /* Colors */
+    --bg-main: #050816;
+    --bg-card: #0F172A;
+    --bg-card-hover: #1E293B;
+    --primary: #6C63FF;
+    --primary-hover: #5a52d6;
+    --secondary: #00D4FF;
+    --highlight: #00FFA3;
+    --text-main: #FFFFFF;
+    --text-muted: #94A3B8;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+    --gradient-highlight: linear-gradient(135deg, var(--secondary), var(--highlight));
+    
+    /* Typography */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    
+    /* Fluid Typography: clamp(min, preferred, max) */
+    --text-xs: clamp(0.75rem, 0.8vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 1vw, 1rem);
+    --text-base: clamp(1rem, 1.2vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1.5vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 2vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 2.5vw, 2rem);
+    --text-3xl: clamp(1.75rem, 3.5vw, 2.5rem);
+    --text-4xl: clamp(2rem, 5vw, 3.5rem);
+    --text-5xl: clamp(2.5rem, 6.5vw, 4.5rem);
+    --text-6xl: clamp(3rem, 8vw, 5.5rem);
+
+    /* Fluid Spacing */
+    --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+    --space-sm: clamp(1rem, 1.5vw, 1.5rem);
+    --space-md: clamp(1.5rem, 3vw, 2.5rem);
+    --space-lg: clamp(2.5rem, 5vw, 4rem);
+    --space-xl: clamp(4rem, 8vw, 8rem);
+    --space-2xl: clamp(6rem, 12vw, 12rem);
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-pill: 9999px;
+    
+    /* Shadows & Glass */
+    --glass-bg: rgba(15, 23, 42, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px rgba(108, 99, 255, 0.3);
+    
+    /* Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-medium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Layout */
+    --max-width: 1440px;
+    --nav-height: 80px;
+}
